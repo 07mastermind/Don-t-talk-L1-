@@ -1,0 +1,25 @@
+{
+  "name": "reactbasic",
+  "version": "1.0.0",
+  "description": "\"Learning React\"",
+  "homepage": "https://github.com/07mastermind/Don-t-talk-L1-#readme",
+  "bugs": {
+    "url": "https://github.com/07mastermind/Don-t-talk-L1-/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/07mastermind/Don-t-talk-L1-.git"
+  },
+  "license": "ISC",
+  "author": "Md Imran",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "parcel": "^2.16.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  }
+}

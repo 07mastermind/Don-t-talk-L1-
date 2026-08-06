@@ -11,3 +11,25 @@ Reactroot.render(element2) // react render purna sb ko hatadega and then render 
 
 const div1=React.createElement('div',{},[element,element2])
 Reactroot.render(div1)
+
+
+
+
+// version 18.2.4
+function sum(a,b){
+    return a+b;
+}
+// minor update ->no effect(sub) on our program
+// version 18.3.4
+function sum(a,b){
+    return a+b;
+}
+function sub(a,b){
+    return a-b;
+}
+sum(2,4)
+// major
+// version 19.2.4 // ab hamara code phate ga coz hame c bhi include krna padega in ,like sum(2,4,0)
+function sum(a,b,c){
+    return a+b+c;
+}
