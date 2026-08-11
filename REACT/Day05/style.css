@@ -1,0 +1,49 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.header{
+    display:flex;
+    margin: 20px;
+    height: 30px;
+}
+#img{
+    position: relative;
+    bottom:10px;
+    left: 20px;
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+}
+.options{
+    margin-left: 10px;
+
+}
+#but{
+    margin:10px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+.input{
+    right: 50px;
+    height:30px;
+    width: 400px;
+    margin:0 40px
+}
+.middle{
+    justify-content: center;
+    background-color: rgb(243, 241, 238);
+    padding:30px 0px;
+}
+.footer{
+    position: relative;
+    top: 30px;
+    left:30px;
+    padding-bottom: 30px;
+    height:200px;
+    width: 1300px;
+}
