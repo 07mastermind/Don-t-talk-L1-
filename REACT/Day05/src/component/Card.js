@@ -7,7 +7,8 @@ function Card(props){
             <div style={{textAlign:'center', height:'auto', width:'150px'}}>
                 <h2 style={{margin:'0'}}>{props.cloth}</h2>
                 <h1 style={{margin:'0'}}>{props.offer}</h1>
-                <h2 style={{margin:'0'}}>Shop Now</h2>
+                <h2 style={{margin:'0'}}>Price: ₹{props.price}</h2>
+               
             </div>
         </div> 
     )
