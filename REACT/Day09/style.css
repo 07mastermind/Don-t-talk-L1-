@@ -1,0 +1,55 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.heading{
+    background-color: blueviolet;
+    height: 150px;
+    /* text-align: center;
+    padding-top: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-weight: 800;
+    color: bisque;
+    font-size: 50px;
+}
+
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.card{
+    text-align: center;
+    border: 2px blueviolet solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+.inp{
+    margin-top: 30px;
+    margin-left: 500px ;
+    margin-right: 30px;
+    height: 30px;
+    padding-left: 40px;
+    font-size: 14px;
+}
+
+.but{
+    height: 30px;
+    background-color: blueviolet;
+    color: wheat;
+}
