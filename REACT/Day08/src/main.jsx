@@ -1,8 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 import ReactDOM from 'react-dom/client'
 
+// console.log('check') //useState will rerender its own component only
 
 function Main(){
+// console.log('final')
+// console.log('9check')  //will be renderd
 
     const [password, setPassword]=useState('ABASDSADFK');
     const [length, setLength] =useState(10)
@@ -31,7 +34,7 @@ function Main(){
 
     useEffect(()=>{
         generatepassword();
-    },generatepassword)
+    },[generatepassword])
 
     return(
         <>
