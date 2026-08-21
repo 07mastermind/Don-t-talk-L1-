@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Counter from './src/counter'
 import { Provider } from 'react-redux'
-import stores from './src/Store'
+import Header from './Header.jsx'
+import Cart from './Cart'
+import stores from './Store2.jsx'
+
 function App(){
 
 
@@ -10,7 +12,8 @@ function App(){
 
         <>
         <Provider store={stores}>
-        <Counter/>
+        <Header/>
+        <Cart/>
         </Provider>
         </>
     )

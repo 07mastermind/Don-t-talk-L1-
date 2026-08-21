@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Counter from './src/counter'
+import Counter from './src1/counter'
 import { Provider } from 'react-redux'
-import stores from './src/Store'
+import stores from './src1/Store'
+import CustomCounter from './src1/Customcounter'
 function App(){
 
 
@@ -11,6 +12,9 @@ function App(){
         <>
         <Provider store={stores}>
         <Counter/>
+        <br></br>
+        <br></br>
+        <CustomCounter/>
         </Provider>
         </>
     )
