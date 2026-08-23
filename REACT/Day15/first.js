@@ -1,3 +1,6 @@
+// npm install react-redux
+// npm install @reduxjs/toolkit 
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Counter from './src1/counter'
