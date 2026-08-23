@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 
 function Counter(){
+    // let count=0;
     let [count,setCount]=useState(0);  //setCount(fn): jaise hi mere andr ki value change hogi, mai execution st krdunga
 
     function increment(){
         setCount(count+1);
         // console.log(count)
+        // count=count+1;
         // document.querySelector('h1').innerText=`Count is:${count}`
     }
 
