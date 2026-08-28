@@ -1,20 +1,20 @@
 import ReactDOM from 'react-dom/client'
-import Header from './Components/Header'
-import FoodOptions from './Components/FoodOption'
-import GroceryOption from './Components/GroceryOption'
-import DineOptions from './Components/DineOptions'
-import FoodDelivery from './Components/FoodDelivery'
-
+import Restaurant from './Components/Restaurant'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './Components/Home'
+import RestMenu from './Components/RestMenu'
 
 function App(){
 
     return(
         <>
-        <Header/>
-        <FoodOptions/>
-        <GroceryOption/>
-        <DineOptions/>
-        <FoodDelivery/>
+        <BrowserRouter  future={{ v7_relativeSplatPath: true , v7_startTransition: true }} >
+        <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/restaurant' element={<Restaurant/>}></Route>
+        <Route path='/city/hyderabad/:id' element={<RestMenu/>}></Route>
+        </Routes>
+        </BrowserRouter>
         </>
     )
 }
