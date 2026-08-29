@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom"
 
 
 export default function RestaurantCard({restInfo}){
 
     return(
+        <Link to="/city/hyderabad/Azam">
         <div className="w-70  transform transition hover:scale-95 duration-300 shadow-gray-200 shadow-md rounded-2xl">
             <div className="relative">
                 <img className="w-70 h-46 rounded-2xl object-cover" src={"https://media-assets.swiggy.com/swiggy/image/upload/"+restInfo?.info?.cloudinaryImageId} alt="" />
@@ -26,5 +28,6 @@ export default function RestaurantCard({restInfo}){
                 <div className="text-gray-700 text-sm ">{restInfo?.info?.areaName}</div>
             </div>
         </div>
+        </Link>
     )
 }
