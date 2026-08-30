@@ -3,6 +3,7 @@ import Restaurant from './Components/Restaurant'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Components/Home'
 import RestMenu from './Components/RestMenu'
+import Search from './Components/Search'
 
 function App(){
 
@@ -13,6 +14,7 @@ function App(){
         <Route path='/' element={<Home/>}></Route>
         <Route path='/restaurant' element={<Restaurant/>}></Route>
         <Route path='/city/hyderabad/:id' element={<RestMenu/>}></Route>
+        <Route path='/city/hyderabad/search' element={<Search/>}></Route>
         </Routes>
         </BrowserRouter>
         </>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ItemCard from "./ItemCard";
 
-export default function ItemsData({items}){
+export default function ItemsData({items, selected}){
     //items:{}{}{}{}{}{}{}{}{}
     
 
@@ -13,7 +13,7 @@ export default function ItemsData({items}){
                 <p className="text-[20px] font-bold mt-5">{items?.title}</p>
                 <div>
                     {
-                        items?.categories?.map((itemInfo)=><ItemsData key={itemInfo?.title} items={itemInfo}/>)
+                        items?.categories?.map((itemInfo)=><ItemsData key={itemInfo?.title} items={itemInfo} selected={selected}/>)
                     }
                 </div>
             </div>
@@ -33,9 +33,41 @@ export default function ItemsData({items}){
         )
     }
     
+    if(selected==='veg'){
+        return(
+         <div>
+            <div className="my-5 flex justify-between ">
+                    <p className="text-lg font-bold">{items?.title+" ("+(items?.itemCards?.length??0)+")"}</p>
+                    <button className="pr-14" onClick={()=>setIsOpen(!isOpen)} >{isOpen? '⮝':'⮟'}</button>
+            </div>
+            <div>
+                {
+                    items?.itemCards?.filter((food)=> "isVeg" in food?.card?.info).map((itemInfo)=><ItemCard key={itemInfo?.card?.info?.id} itemInfo={itemInfo?.card?.info}/>)
+                } 
+            </div>
+        </div>
+    )
+    }
+
+    if(selected==='nonveg'){
+        return(
+         <div>
+            <div className="my-5 flex justify-between ">
+                    <p className="text-lg font-bold">{items?.title+" ("+(items?.itemCards?.length??0)+")"}</p>
+                    <button className="pr-14" onClick={()=>setIsOpen(!isOpen)} >{isOpen? '⮝':'⮟'}</button>
+            </div>
+            <div>
+                {
+                    items?.itemCards?.filter((food)=> !("isVeg" in food?.card?.info)).map((itemInfo)=><ItemCard key={itemInfo?.card?.info?.id} itemInfo={itemInfo?.card?.info}/>)
+                } 
+            </div>
+        </div>
+    )
+    }
+
     return(
         <div>
-            <div className="my-5 flex justify-between">
+            <div className="my-5 flex justify-between ">
                     <p className="text-lg font-bold">{items?.title+" ("+(items?.itemCards?.length??0)+")"}</p>
                     <button className="pr-14" onClick={()=>setIsOpen(!isOpen)} >{isOpen? '⮝':'⮟'}</button>
             </div>
