@@ -1,5 +1,30 @@
+import {useState} from 'react'
+import { addItem,incrementItem, decrementItem } from '../store/cartSlicer'
+import {useDispatch, useSelector} from 'react-redux'
+
 export default function ItemCard({itemInfo}){
 // itemInfo:{}{}{}{}{}{}{}
+
+    // const [count, setCount]=useState(0)  //local state variable state ko loose krdete hai when we go to different route
+    const dispatch=useDispatch();
+
+    const item=useSelector(state=>state.cartSlice.items)
+    const element=item.find(value=>value.id===itemInfo.id)
+    const count=element? element.quantity:0
+
+    function handleAdd(){
+        // setCount(1)
+        dispatch(addItem(itemInfo))
+    }
+
+    function handleIncrement(){
+        // setCount(count+1)
+        dispatch(incrementItem(itemInfo))
+    }
+    function handleDecrement(){
+        // setCount(count-1)
+        dispatch(decrementItem(itemInfo))
+    }
 
     return(
         <>
@@ -22,7 +47,18 @@ export default function ItemCard({itemInfo}){
             </div>
             <div className=" relative ">
                 <img className="w-41 h-38 rounded-2xl object-cover" src={'https://media-assets.swiggy.com/swiggy/image/upload/'+itemInfo?.imageId} alt=" " />
-                <button className="w-32 h-11 font-bold text-xl text-[#1ba672] bg-white border border-gray-300 rounded-xl absolute top-32 left-5 shadow-gray-200 shadow-md cursor-pointer hover:bg-gray-200 ">ADD</button>
+                {
+                    count==0?(
+                        <button className="w-32 h-11 font-bold text-xl text-[#1ba672] bg-white border border-gray-300 rounded-xl absolute top-32 left-5 shadow-gray-200 shadow-md cursor-pointer hover:bg-gray-200" onClick={()=>handleAdd()}>ADD</button>
+                    ):(
+                        <div className='w-32 h-11 font-bold text-xl text-[#1ba672] bg-white border border-gray-300 rounded-xl absolute top-32 left-5 shadow-gray-200 shadow-md cursor-pointer flex justify-center items-center gap-8 '>
+                            <button  onClick={()=>handleDecrement()} className='  hover:bg-gray-200 '>-</button>
+                            <span className='w-[10%]'>{count}</span>
+                            <button onClick={()=>handleIncrement()} className=' hover:bg-gray-200 '>+</button>
+                        </div>
+                    )
+                }
+                
             </div>
         </div>
         </>
